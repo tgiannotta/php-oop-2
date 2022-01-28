@@ -13,6 +13,8 @@ require_once  __DIR__  . "/User.php";
 require_once  __DIR__  . "/Articoli.php";
 require_once  __DIR__  . "/Romanzi.php";
 require_once  __DIR__  . "/Fumetti.php";
+require_once  __DIR__  . "/Scuola.php";
+
 
 
 /* Articolo */
@@ -24,6 +26,11 @@ $caduta->data = '15/05/2019';
 $brisingr = new Articoli('Brisingr', 'Cristopher Paolini', 18, 'Fantasy');
 $brisingr->pagine = 1024;
 $brisingr->data = '16/08/2004';
+
+/* Articolo */
+$kotlin = new Scuola('Kotlin', 'Massimo Carli', 43);
+$kotlin->pagine = 186;
+$brisingr->data = '27/10/2020';
 
 /* Articolo */
 $atzeco = new Articoli('L\'atzeco', 'Gary Jennings', 6, 'Storico');
@@ -41,6 +48,8 @@ var_dump($brisingr);
 var_dump($thor54);
 var_dump($dd6);
 var_dump($atzeco);
+var_dump($kotlin);
+
 
 
 
