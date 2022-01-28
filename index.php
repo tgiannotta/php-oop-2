@@ -18,12 +18,12 @@ require_once  __DIR__  . "/Scuola.php";
 
 
 /* Articolo */
-$caduta = new Articoli('La caduta dello Zentir', 'Caleel', 23.5, 'Fantasy');
+$caduta = new Romanzi('La caduta dello Zentir', 'Caleel', 23.5, 'Fantasy');
 $caduta->pagine = 869;
 $caduta->data = '15/05/2019';
 
 /* Articolo */
-$brisingr = new Articoli('Brisingr', 'Cristopher Paolini', 18, 'Fantasy');
+$brisingr = new Romanzi('Brisingr', 'Cristopher Paolini', 18, 'Fantasy');
 $brisingr->pagine = 1024;
 $brisingr->data = '16/08/2004';
 
@@ -33,7 +33,7 @@ $kotlin->pagine = 186;
 $brisingr->data = '27/10/2020';
 
 /* Articolo */
-$atzeco = new Articoli('L\'atzeco', 'Gary Jennings', 6, 'Storico');
+$atzeco = new Romanzi('L\'atzeco', 'Gary Jennings', 6, 'Storico');
 $atzeco->pagine = 2154;
 $atzeco->data = '09/09/1986';
 
@@ -43,13 +43,21 @@ $thor54 = new Fumetti('Thor n.54', 'Fabio Bengazzi', 7.8, 'Marvel');
 /* Articolo */
 $dd6 = new Fumetti('DareDevil n.6', 'Enrico Torre', 7.8, 'Marvel');
 
-var_dump($caduta);
-var_dump($brisingr);
-var_dump($thor54);
-var_dump($dd6);
-var_dump($atzeco);
-var_dump($kotlin);
+/* user */
+$tommaso = new User('Tommaso', 'Giannotta', 'tommaso.giannotta@gmail.com');
+$tommaso->age = 29;
 
+/* USER */
+$vincenzo = new User('Vincenzo', 'Di Meo', 'endacil92@gmail.com');
+$vincenzo->age = 28;
+
+/* AGGIUNGO AL CARRELLO DI TOMMASO TUTTI I PRODOTTI CHE VUOLE */
+$tommaso-> addProduct($brisingr);
+$tommaso-> addProduct($atzeco);
+$tommaso-> addProduct($dd6);
+
+
+$tommasoCarrello = $tommaso->getCarrello();
 
 
 
@@ -75,10 +83,29 @@ var_dump($kotlin);
     <div class="carrello-container">
         <div class="carrello">
                 <div class="prodotti">
-                    <h2>Prova prodotti</h2>
+                    <h2>Ciao <?php echo $tommaso->getFullName();?> Stai acquistando i seguenti prodotti:</h2>
+                    <?php foreach ($tommasoCarrello as $prodotto){?>
+                       
+                        <ul>
+                        <h4><?php echo $prodotto->titolo;?></h4>
+                        <li>
+                            <?php echo $prodotto->autore;?>
+                        </li>
+                        <li>
+                            <?php echo $prodotto->prezzo;?> €
+                        </li>
+                       
+                    </ul>       
+                <?php }?>
+
                 </div>
                 <div class="totale">
-                    <h2>Prova Totale</h2>
+                    <h2>Totale</h2>
+                    <?php foreach ($tommasoCarrello as $prodotto){?>
+                       <h3><?php echo $prodotto->titolo;?> <?php echo $prodotto->prezzo; ?></h3>                             
+               <?php }?>
+
+
                 </div>
         </div>
 

@@ -10,6 +10,10 @@ class User{
 
     public $age;
 
+    public $totale;
+
+    protected $carrello = [];
+
     public function __construct($_nome, $_cognome, $_mail){
             $this->nome = $_nome;
             $this->cognome = $_cognome;
@@ -17,13 +21,21 @@ class User{
 
 
     }
+    public function addProduct($prodotto){
+        $this->carrello[] = $prodotto;
+    }
+
+    public function getFullName(){
+        return $this->nome . ' ' . $this->cognome;
+    }
+
+    public function getCarrello(){
+        return $this->carrello;
+    }
+    
 }
 
-$tommaso = new User('Tommaso', 'Giannotta', 'tommaso.giannotta@gmail.com');
-$tommaso->age = 29;
 
-$vincenzo = new User('Vincenzo', 'Di Meo', 'endacil92@gmail.com');
-$vincenzo->age = 28;
 
 
 
