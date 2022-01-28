@@ -9,6 +9,45 @@ Provate a stampare in pagina come visto questa mattina i prodotti scelti dall'ut
 
 <?php
 
+require_once  __DIR__  . "/User.php";
+require_once  __DIR__  . "/Articoli.php";
+require_once  __DIR__  . "/Romanzi.php";
+require_once  __DIR__  . "/Fumetti.php";
+
+
+/* Articolo */
+$caduta = new Articoli('La caduta dello Zentir', 'Caleel', 23.5, 'Fantasy');
+$caduta->pagine = 869;
+$caduta->data = '15/05/2019';
+
+/* Articolo */
+$brisingr = new Articoli('Brisingr', 'Cristopher Paolini', 18, 'Fantasy');
+$brisingr->pagine = 1024;
+$brisingr->data = '16/08/2004';
+
+/* Articolo */
+$atzeco = new Articoli('L\'atzeco', 'Gary Jennings', 6, 'Storico');
+$atzeco->pagine = 2154;
+$atzeco->data = '09/09/1986';
+
+/* Articolo */
+$thor54 = new Fumetti('Thor n.54', 'Fabio Bengazzi', 7.8, 'Marvel');
+
+/* Articolo */
+$dd6 = new Fumetti('DareDevil n.6', 'Enrico Torre', 7.8, 'Marvel');
+
+var_dump($caduta);
+var_dump($brisingr);
+var_dump($thor54);
+var_dump($dd6);
+var_dump($atzeco);
+
+
+
+
+
+
+
 
 
 ?>
