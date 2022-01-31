@@ -5,7 +5,16 @@
     box-sizing: border-box;
 }
 
+/* COMMON */
+.pad-bot-20{
+    padding-bottom: 20px;
+}
+
 /* TITOLO */
+body{
+    background-color: black;
+    color: white;
+}
 h1{
     text-align: center;
     margin: 30px 0px;
@@ -15,17 +24,24 @@ h1{
 .carrello-container{
     width:60%;
     margin: auto;
+ 
 
 
 }
 .carrello{
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin: auto;
+   
     padding-top: 100px;
 }
 .prodotti{
-    border-right: 1px solid black;
-    width: 50%;
+    width: 80%;
+}
+.tot-price h3{
+    border-top: 1px solid orange;
+    padding-top: 15px;
+
+}
+.col-price{
+    color: lime;
 }

@@ -54,13 +54,18 @@ $vincenzo->age = 28;
 /* AGGIUNGO AL CARRELLO DI TOMMASO TUTTI I PRODOTTI CHE VUOLE */
 $tommaso-> addProduct($brisingr);
 $tommaso-> addProduct($atzeco);
-$tommaso-> addProduct($dd6);
+$tommaso-> addProduct($kotlin);
+$tommaso-> addProduct($caduta);
+
+
 
 
 $tommasoCarrello = $tommaso->getCarrello();
+/* SOMMO IL TOTALE DEI PREZZI NEL CARRELLO */
+foreach($tommasoCarrello as $singlePrice){
+    $totale += $singlePrice->prezzo;
 
-
-
+}
 
 
 
@@ -82,12 +87,12 @@ $tommasoCarrello = $tommaso->getCarrello();
     <h1>Benvenuto nel negozio di Tommaso</h1>
     <div class="carrello-container">
         <div class="carrello">
-                <div class="prodotti">
-                    <h2>Ciao <?php echo $tommaso->getFullName();?> Stai acquistando i seguenti prodotti:</h2>
+                <div class="prodotti ">
+                    <h2 class="pad-bot-20">Ciao <?php echo $tommaso->getFullName();?> Stai acquistando i seguenti prodotti:</h2>
                     <?php foreach ($tommasoCarrello as $prodotto){?>
                        
                         <ul>
-                        <h4><?php echo $prodotto->titolo;?></h4>
+                        <h3><?php echo $prodotto->titolo;?></h3>
                         <li>
                             <?php echo $prodotto->autore;?>
                         </li>
@@ -100,14 +105,24 @@ $tommasoCarrello = $tommaso->getCarrello();
 
                 </div>
                 <div class="totale">
-                    <h2>Totale</h2>
+                    <h2 class="pad-bot-20" >Totale:</h2>
                     <?php foreach ($tommasoCarrello as $prodotto){?>
-                       <h3><?php echo $prodotto->titolo;?> <?php echo $prodotto->prezzo; ?></h3>                             
-               <?php }?>
+                        
+                       <h3><?php echo $prodotto->titolo;?> <span class="col-price"><?php echo $prodotto->prezzo; ?></span> € </h3>                             
 
+               <?php   }?>
+               <div>
+                   
+               </div>
+                        <div class="tot-price">
+                            <h3>Il totale è: <span class="col-price"><?php echo $totale; ?></span> €</h3>
+                        </div>
 
                 </div>
+                
         </div>
+
+
 
 
     </div>

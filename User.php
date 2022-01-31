@@ -10,7 +10,7 @@ class User{
 
     public $age;
 
-    public $totale;
+    public $totale=0;
 
     protected $carrello = [];
 
@@ -34,8 +34,6 @@ class User{
     }
     
 }
-
-
 
 
 
