@@ -19,7 +19,7 @@ use Stato;
         $this->prezzo = $_prezzo;
 
     }
+   
 }
-
 
 ?>

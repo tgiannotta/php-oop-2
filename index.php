@@ -59,7 +59,6 @@ $tommaso-> addProduct($kotlin);
 $tommaso-> addProduct($caduta);
 
 
-var_dump($brisingr);
 
 $tommasoCarrello = $tommaso->getCarrello();
 /* SOMMO IL TOTALE DEI PREZZI NEL CARRELLO */
