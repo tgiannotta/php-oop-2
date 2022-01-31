@@ -1,7 +1,8 @@
 <?php
+require_once  __DIR__  . "/Stato.php";
 
 class Articoli{
-
+use Stato;
     public $prezzo;
 
     public $titolo;

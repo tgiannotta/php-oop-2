@@ -1,7 +1,10 @@
 <?php
 require_once  __DIR__  . "/Articoli.php";
+require_once  __DIR__  . "/Stato.php";
+
 
 class Romanzi extends Articoli{
+use Stato;
 
     public $genere;
 

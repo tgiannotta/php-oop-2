@@ -17,6 +17,7 @@ require_once  __DIR__  . "/Scuola.php";
 
 
 
+
 /* Articolo */
 $caduta = new Romanzi('La caduta dello Zentir', 'Caleel', 23.5, 'Fantasy');
 $caduta->pagine = 869;
@@ -58,7 +59,7 @@ $tommaso-> addProduct($kotlin);
 $tommaso-> addProduct($caduta);
 
 
-
+var_dump($brisingr);
 
 $tommasoCarrello = $tommaso->getCarrello();
 /* SOMMO IL TOTALE DEI PREZZI NEL CARRELLO */
